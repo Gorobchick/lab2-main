@@ -10,6 +10,22 @@ public abstract class Item {
         this.width = width;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
     public int getHeight() {
         return height;
     }
