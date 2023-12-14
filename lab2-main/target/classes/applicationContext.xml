@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+<bean id="Engine"
+    class="com.example.lab1.details.Engine">
+    <construckor-arg name="pistons" value="${engine.pistons}"/> 
+    <construckor-arg name="volume" value="${engine.volume}"/>
+</bean>
+
+<bean id="Crank"
+    class="com.example.lab1.items.Crank">
+    <construckor-arg name="name" value="Red Crank">
+    <construckor-arg name="heigth" value="${crank.heigth}"/> 
+    <construckor-arg name="width" value="${crank.width}"/>
+</bean>
+
+<bean id="hatchback"
+    class="com.example.lab1.details.Body"/>
+    <construckor-arg name="heigth" value="${hatchback.heigth}"/> 
+    <construckor-arg name="width" value="${hatchback.width}"/>
+</bean>
+
+<bean id="sedan"
+    class="com.example.lab1.details.Body">
+    <construckor-arg name="heigth" value="${sedan.heigth}"/> 
+    <construckor-arg name="width" value="${sedan.width}"/>
+    <properties name="item" ref="crank"/>
+</bean>
+
+<bean id="redBody"
+    class="com.example.lab1.details.Body">
+</bean>
+
+<bean id="largeWheels"
+    class="com.example.lab1.details.Wheels">
+</bean>
+
+<bean id="luxuryCabin"
+    class="com.example.lab1.details.Cabin">
+</bean>
+
+ <bean id="Car_name"
+          class="com.example.lab1.Car">
+        <property name="name" value="${car_name}"/>
+        <property name="body" ref="redBody"/>
+        <property name="cabin" ref="luxuryCabin"/>
+        <property name="wheels" ref="largeWheels"/>
+    </bean>
+
